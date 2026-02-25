@@ -1,0 +1,18 @@
+.footer {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 2rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer__text {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: #1a3a4a;
+  letter-spacing: 0.1em;
+}

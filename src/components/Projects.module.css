@@ -1,0 +1,18 @@
+.section {
+  position: relative;
+  z-index: 1;
+  padding: 8rem 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .section { padding: 6rem 1.5rem; }
+  .grid { grid-template-columns: 1fr; }
+}

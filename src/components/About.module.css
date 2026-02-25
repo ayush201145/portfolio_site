@@ -1,0 +1,89 @@
+.section {
+  position: relative;
+  z-index: 1;
+  padding: 8rem 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 5rem;
+}
+
+.bio {
+  color: var(--text-2);
+  line-height: 1.85;
+  font-size: 0.93rem;
+  margin-bottom: 1.2rem;
+}
+
+.highlight { color: var(--accent); }
+
+.infoCard {
+  margin-top: 2rem;
+  padding: 1rem 1.4rem;
+  background: rgba(0,255,200,0.03);
+  border: 1px solid rgba(0,255,200,0.1);
+  border-radius: 3px;
+}
+
+.infoLine {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-3);
+  line-height: 2;
+}
+
+.dot { margin-right: 0.5rem; }
+
+/* Skill group */
+.group { margin-bottom: 1.8rem; }
+
+.groupLabel {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--accent);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+  opacity: 0.7;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 5px 12px;
+  border-radius: 2px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.02);
+  color: var(--text-3);
+  transition: opacity 0.4s ease, transform 0.4s ease,
+              color 0.2s, border-color 0.2s, background 0.2s;
+  opacity: 0;
+  transform: translateY(8px);
+  cursor: default;
+}
+
+.chipVisible {
+  opacity: 1;
+  transform: none;
+}
+
+.chipHov {
+  color: var(--accent);
+  border-color: rgba(0,255,200,0.5);
+  background: rgba(0,255,200,0.06);
+}
+
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; gap: 3rem; }
+  .section { padding: 6rem 1.5rem; }
+}

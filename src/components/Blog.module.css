@@ -1,0 +1,25 @@
+.section {
+  position: relative;
+  z-index: 1;
+  padding: 8rem 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.note {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-4);
+  letter-spacing: 0.05em;
+  margin-bottom: 2.5rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+@media (max-width: 640px) {
+  .section { padding: 6rem 1.5rem; }
+}

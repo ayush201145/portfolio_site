@@ -1,0 +1,83 @@
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 5rem;
+}
+
+.about__bio p {
+  font-family: var(--font-mono);
+  color: var(--text-2);
+  line-height: 1.85;
+  font-size: 0.91rem;
+  margin-bottom: 1.2rem;
+}
+
+.about__highlight {
+  color: var(--accent);
+}
+
+.about__card {
+  margin-top: 2rem;
+  padding: 1rem 1.4rem;
+  background: rgba(0, 255, 200, 0.03);
+  border: 1px solid rgba(0, 255, 200, 0.1);
+  border-radius: 3px;
+}
+
+.about__card-line {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-3) !important;
+  line-height: 2 !important;
+  margin-bottom: 0 !important;
+}
+
+.about__card-icon {
+  margin-right: 0.6rem;
+}
+
+/* Skill groups */
+.skill-group {
+  margin-bottom: 1.8rem;
+}
+
+.skill-group__label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--accent);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+  opacity: 0.7;
+}
+
+.skill-group__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-chip {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  padding: 5px 12px;
+  border-radius: 2px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-2);
+  cursor: default;
+  transition: all 0.2s ease, opacity 0.6s ease, transform 0.6s ease;
+}
+
+.skill-chip:hover {
+  border-color: var(--border-accent);
+  background: var(--bg-hover);
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}

@@ -1,0 +1,51 @@
+.contact {
+  text-align: center;
+}
+
+.contact .section-label__row,
+.contact .section-label__divider {
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact__sub {
+  font-family: var(--font-mono);
+  color: var(--text-3);
+  max-width: 480px;
+  margin: 0 auto 3rem;
+  line-height: 1.8;
+  font-size: 0.91rem;
+}
+
+.contact__email-btn {
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 3rem;
+}
+
+.contact__btn {
+  font-size: 0.82rem;
+  padding: 1rem 2.5rem;
+}
+
+.contact__socials {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.contact__social-link {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-4);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact__social-link:hover {
+  color: var(--accent);
+}
