@@ -2,105 +2,145 @@ import React, { useState } from 'react';
 import { BIO } from '../data/bioData';
 
 export default function ContactSection() {
-  const [copiedField, setCopiedField] = useState(null);
+  const [copiedKey, setCopiedKey] = useState(null);
 
-  const copyToClipboard = (text, fieldName) => {
+  const handleCopy = (text, key) => {
     navigator.clipboard.writeText(text);
-    setCopiedField(fieldName);
-    setTimeout(() => setCopiedField(null), 2500);
+    setCopiedKey(key);
+    setTimeout(() => setCopiedKey(null), 2000);
   };
 
   return (
-    <section id="contact" className="section-padding">
+    <section id="contact" className="section-padding" style={{ background: 'rgba(7, 10, 18, 0.6)' }}>
       <div className="container-xl">
         
+        {/* HEADER */}
         <div className="section-header">
-          <div style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px' }}>
-            GET IN TOUCH
+          <div className="section-tag">
+            <span className="pulse-led" style={{ background: '#38bdf8' }} />
+            INITIATE COMMUNICATIONS
           </div>
-          <h2 className="section-title">Let's Connect & Build</h2>
+          <h2 className="section-title">
+            Let's Build & Deploy
+          </h2>
           <p className="section-subtitle">
-            Open for Software Engineering, AI/ML Infrastructure, Systems Architecture, and Technical Advisory roles.
+            Open for Backend Engineering, Distributed Systems Architecture, AI/Computer Vision Infrastructure, and Full-Stack Engineering roles.
           </p>
         </div>
 
-        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <div className="glass-panel" style={{ padding: '36px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }}>
+        <div style={{ maxWidth: '820px', margin: '0 auto' }}>
+          <div className="glass-panel" style={{ padding: '36px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '32px' }}>
             
-            {/* CONTACT INFO */}
+            {/* DIRECT CHANNELS */}
             <div>
-              <h3 style={{ fontSize: '20px', fontWeight: '700', color: 'var(--text-primary)', marginBottom: '12px' }}>
-                Direct Channels
+              <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text-primary)', marginBottom: '10px' }}>
+                Direct Communication Channels
               </h3>
-              <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '24px' }}>
-                Feel free to reach out via email or phone, or connect on GitHub and LinkedIn.
+              <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '20px' }}>
+                Reach out for architectural discussions, technical roles, or open-source collaborations.
               </p>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 
-                {/* EMAIL */}
-                <div style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)', padding: '14px 16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                {/* EMAIL CARD */}
+                <div style={{
+                  background: 'rgba(255, 255, 255, 0.03)',
+                  border: '1px solid var(--border-subtle)',
+                  borderRadius: 'var(--radius-sm)',
+                  padding: '12px 16px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between'
+                }}>
                   <div>
-                    <div style={{ fontSize: '11px', color: 'var(--text-muted)' }}>EMAIL ADDRESS</div>
-                    <div style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text-primary)', fontFamily: 'var(--font-mono)' }}>{BIO.email}</div>
+                    <div style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>EMAIL</div>
+                    <div style={{ fontSize: '13px', fontFamily: 'var(--font-mono)', fontWeight: '600', color: 'var(--text-primary)' }}>
+                      {BIO.email}
+                    </div>
                   </div>
                   <button
                     type="button"
-                    onClick={() => copyToClipboard(BIO.email, 'email')}
-                    className="btn-outline"
-                    style={{ padding: '6px 12px', fontSize: '12px' }}
+                    onClick={() => handleCopy(BIO.email, 'email')}
+                    className="btn-vibe-outline"
+                    style={{ padding: '4px 10px', fontSize: '11px' }}
                   >
-                    {copiedField === 'email' ? '✓ Copied!' : 'Copy'}
+                    {copiedKey === 'email' ? '✓ Copied' : 'Copy'}
                   </button>
                 </div>
 
-                {/* PHONE */}
-                <div style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)', padding: '14px 16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                {/* PHONE CARD */}
+                <div style={{
+                  background: 'rgba(255, 255, 255, 0.03)',
+                  border: '1px solid var(--border-subtle)',
+                  borderRadius: 'var(--radius-sm)',
+                  padding: '12px 16px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between'
+                }}>
                   <div>
-                    <div style={{ fontSize: '11px', color: 'var(--text-muted)' }}>PHONE NUMBER</div>
-                    <div style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text-primary)', fontFamily: 'var(--font-mono)' }}>{BIO.phone}</div>
+                    <div style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>PHONE / WHATSAPP</div>
+                    <div style={{ fontSize: '13px', fontFamily: 'var(--font-mono)', fontWeight: '600', color: 'var(--text-primary)' }}>
+                      {BIO.phone}
+                    </div>
                   </div>
                   <button
                     type="button"
-                    onClick={() => copyToClipboard(BIO.phone, 'phone')}
-                    className="btn-outline"
-                    style={{ padding: '6px 12px', fontSize: '12px' }}
+                    onClick={() => handleCopy(BIO.phone, 'phone')}
+                    className="btn-vibe-outline"
+                    style={{ padding: '4px 10px', fontSize: '11px' }}
                   >
-                    {copiedField === 'phone' ? '✓ Copied!' : 'Copy'}
+                    {copiedKey === 'phone' ? '✓ Copied' : 'Copy'}
                   </button>
                 </div>
 
               </div>
             </div>
 
-            {/* PROFILES & LINKS */}
+            {/* DEVELOPER PROFILES */}
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
               <div>
-                <h3 style={{ fontSize: '20px', fontWeight: '700', color: 'var(--text-primary)', marginBottom: '12px' }}>
-                  Developer Profiles
+                <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text-primary)', marginBottom: '10px' }}>
+                  Developer Network
                 </h3>
-                <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '24px' }}>
-                  Explore 18 open-source repositories and detailed commit histories.
+                <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '20px' }}>
+                  Inspect public repositories, commit patterns, and verified engineering credentials.
                 </p>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                  <a href={BIO.github} target="_blank" rel="noreferrer" className="btn-outline" style={{ justifyContent: 'space-between' }}>
-                    <span>🐙 GitHub Profile (ayush201145)</span>
-                    <span>↗</span>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  <a
+                    href={BIO.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-vibe-outline"
+                    style={{ justifyContent: 'space-between' }}
+                  >
+                    <span>🐙 GitHub (ayush201145)</span>
+                    <span style={{ fontFamily: 'var(--font-mono)' }}>↗</span>
                   </a>
-                  <a href={BIO.linkedin} target="_blank" rel="noreferrer" className="btn-outline" style={{ justifyContent: 'space-between' }}>
+
+                  <a
+                    href={BIO.linkedin}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-vibe-outline"
+                    style={{ justifyContent: 'space-between' }}
+                  >
                     <span>💼 LinkedIn Profile</span>
-                    <span>↗</span>
+                    <span style={{ fontFamily: 'var(--font-mono)' }}>↗</span>
                   </a>
                 </div>
               </div>
 
-              <div style={{ marginTop: '24px' }}>
-                <a href={BIO.email} className="btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
-                  ⚡ Send Direct Message
+              <div style={{ marginTop: '20px' }}>
+                <a
+                  href={`mailto:${BIO.email}`}
+                  className="btn-vibe-primary"
+                  style={{ width: '100%', justifyContent: 'center' }}
+                >
+                  ⚡ Send Direct Dispatch
                 </a>
               </div>
-
             </div>
 
           </div>

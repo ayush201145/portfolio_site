@@ -1,61 +1,70 @@
-/* design-system.css - Obsidian Precision Design System for Engineering Portfolio Workstation */
+/* design-system.css - Bespoke Vibe-Coded Design System for Ayush Engineering Workstation */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap');
 
 :root {
-  /* Color Palette - Dark Obsidian Theme */
-  --bg-main: #070a11;
-  --bg-surface: #0e1626;
-  --bg-card: rgba(15, 23, 42, 0.75);
-  --bg-card-hover: rgba(30, 41, 59, 0.85);
-  --bg-glass: rgba(15, 23, 42, 0.65);
-  
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(255, 255, 255, 0.18);
-  --border-focus: #6366f1;
+  /* Color Palette - Cyber Void Theme */
+  --bg-void: #05070d;
+  --bg-main: #070a12;
+  --bg-surface: #0c1220;
+  --bg-card: rgba(14, 21, 37, 0.75);
+  --bg-card-hover: rgba(22, 33, 58, 0.88);
+  --bg-glass: rgba(10, 16, 30, 0.7);
+  --bg-terminal: #070b14;
 
+  /* Borders */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.15);
+  --border-hover: rgba(255, 255, 255, 0.28);
+  --border-neon: rgba(0, 255, 136, 0.4);
+
+  /* Typography Colors */
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
-  --text-inverse: #0f172a;
+  --text-code: #38bdf8;
 
-  /* Engineering Track Accents */
-  --track-sde: #06b6d4;      /* Electric Cyan */
-  --track-swe: #8b5cf6;      /* Neon Violet */
-  --track-aiml: #10b981;     /* Emerald Green */
-  --track-da: #f59e0b;       /* Solar Amber */
-  --track-ba: #f43f5e;       /* Rose Gold */
-  --track-devops: #3b82f6;   /* Cobalt Blue */
+  /* Vibe Coded Project Signature Accents */
+  --vibe-amber: #f59e0b;       /* 01: E-Commerce */
+  --vibe-purple: #a855f7;      /* 02: Asset Transcoder */
+  --vibe-emerald: #00ff88;     /* 03: CityPulse-X */
+  --vibe-cyan: #38bdf8;        /* 04: School Management */
+  --vibe-crimson: #f43f5e;     /* 05: URL Shortener */
 
-  /* Primary Accent */
-  --accent-primary: #6366f1; /* Indigo */
-  --accent-gradient: linear-gradient(135deg, #6366f1, #8b5cf6);
+  /* Global Core Accents */
+  --accent-cyan: #00f0ff;
+  --accent-primary: #00ff88;
+  --accent-secondary: #6366f1;
+  --accent-glow: rgba(0, 255, 136, 0.18);
+  --accent-gradient: linear-gradient(135deg, #00ff88 0%, #00f0ff 50%, #6366f1 100%);
 
   /* Typography */
-  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', Consolas, Monaco, monospace;
 
-  /* Border Radius */
+  /* Radii */
+  --radius-xs: 4px;
   --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
   --radius-full: 9999px;
 
-  /* Transition Physics */
+  /* Transitions */
   --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --transition-smooth: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-spring: all 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Base Styles & Background Grid Pattern */
+/* Background Cyber Grid & Texture */
 body {
-  background-color: var(--bg-main);
+  background-color: var(--bg-void);
   background-image: 
-    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.08) 0px, transparent 50%),
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 240, 255, 0.09) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 90% 80%, rgba(168, 85, 247, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 30% at 10% 40%, rgba(0, 255, 136, 0.07) 0%, transparent 60%),
     linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+  background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
   color: var(--text-primary);
   font-family: var(--font-sans);
   margin: 0;
@@ -65,145 +74,128 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Glassmorphic Panel Container */
+/* Glass Panels with Cyber Edges */
 .glass-panel {
   background: var(--bg-card);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  position: relative;
   transition: var(--transition-smooth);
 }
 
 .glass-panel:hover {
-  border-color: var(--border-hover);
+  border-color: var(--border-medium);
 }
 
-/* Track Accent Badges & Borders */
-.track-badge {
+/* Vibe Monospace HUD Badges */
+.hud-tag {
   font-family: var(--font-mono);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
   padding: 4px 10px;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-xs);
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  border: 1px solid currentColor;
 }
 
-.track-badge.sde { background: rgba(6, 182, 212, 0.12); color: var(--track-sde); border: 1px solid rgba(6, 182, 212, 0.3); }
-.track-badge.swe { background: rgba(139, 92, 246, 0.12); color: var(--track-swe); border: 1px solid rgba(139, 92, 246, 0.3); }
-.track-badge.aiml { background: rgba(16, 185, 129, 0.12); color: var(--track-aiml); border: 1px solid rgba(16, 185, 129, 0.3); }
-.track-badge.da { background: rgba(245, 158, 11, 0.12); color: var(--track-da); border: 1px solid rgba(245, 158, 11, 0.3); }
-.track-badge.ba { background: rgba(244, 63, 94, 0.12); color: var(--track-ba); border: 1px solid rgba(244, 63, 94, 0.3); }
-.track-badge.devops { background: rgba(59, 130, 246, 0.12); color: var(--track-devops); border: 1px solid rgba(59, 130, 246, 0.3); }
+.hud-tag.amber { color: var(--vibe-amber); background: rgba(245, 158, 11, 0.12); border-color: rgba(245, 158, 11, 0.35); }
+.hud-tag.purple { color: var(--vibe-purple); background: rgba(168, 85, 247, 0.12); border-color: rgba(168, 85, 247, 0.35); }
+.hud-tag.emerald { color: var(--vibe-emerald); background: rgba(0, 255, 136, 0.12); border-color: rgba(0, 255, 136, 0.35); }
+.hud-tag.cyan { color: var(--vibe-cyan); background: rgba(56, 189, 248, 0.12); border-color: rgba(56, 189, 248, 0.35); }
+.hud-tag.crimson { color: var(--vibe-crimson); background: rgba(244, 63, 94, 0.12); border-color: rgba(244, 63, 94, 0.35); }
 
-/* Buttons */
-.btn-primary {
+/* Vibe Buttons */
+.btn-vibe-primary {
   background: var(--accent-gradient);
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 14px;
-  padding: 10px 20px;
-  border-radius: var(--radius-md);
+  color: #030712;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+  padding: 10px 22px;
+  border-radius: var(--radius-sm);
   border: none;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
-  transition: var(--transition-smooth);
   text-decoration: none;
+  box-shadow: 0 4px 18px rgba(0, 255, 136, 0.35);
+  transition: var(--transition-fast);
 }
 
-.btn-primary:hover {
+.btn-vibe-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.45);
+  box-shadow: 0 6px 24px rgba(0, 255, 136, 0.55);
+  filter: brightness(1.1);
 }
 
-.btn-outline {
+.btn-vibe-outline {
   background: rgba(255, 255, 255, 0.04);
   color: var(--text-primary);
+  font-family: var(--font-mono);
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
   padding: 10px 20px;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-medium);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  transition: var(--transition-smooth);
   text-decoration: none;
+  transition: var(--transition-fast);
 }
 
-.btn-outline:hover {
-  background: rgba(255, 255, 255, 0.09);
-  border-color: var(--border-hover);
+.btn-vibe-outline:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--text-primary);
   transform: translateY(-2px);
 }
 
-/* Code Pills */
-.tech-pill {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--text-secondary);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 3px 8px;
-  border-radius: var(--radius-sm);
-}
-
-/* Terminal Styling */
-.terminal-window {
-  background: #090e17;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius-md);
-  font-family: var(--font-mono);
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-}
-
-.terminal-header {
-  background: rgba(15, 23, 42, 0.9);
-  padding: 10px 14px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.terminal-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-.terminal-dot.red { background: #ef4444; }
-.terminal-dot.yellow { background: #f59e0b; }
-.terminal-dot.green { background: #10b981; }
-
-.terminal-body {
-  padding: 16px;
-  font-size: 13px;
-  color: #e2e8f0;
-  line-height: 1.6;
-}
-
-/* Scrollbar Customization */
-::-webkit-scrollbar {
+/* Pulsing LED Indicator */
+.pulse-led {
   width: 8px;
   height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
+
+.pulse-led::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: inherit;
+  opacity: 0.45;
+  animation: pulseGlow 1.8s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.8); opacity: 0; }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-main);
+  background: var(--bg-void);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.18);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(0, 255, 136, 0.45);
 }
